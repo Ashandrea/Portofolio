@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Alif Rimu - UI/UX Designer & Web Artisan">
+
+    <title>Alif Rimu - UI/UX Designer & Web Artisan</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=press-start-2p:400|space-grotesk:400,500,600,700" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Styles -->
+    <style>
+        /* Section Background Patterns - Vibrant Colors */
+        .pixel-pattern-1 {
+            background-color: transparent;
+        }
+
+        .pixel-pattern-2 {
+            background-color: #fae8ff;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c026d3' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .pixel-pattern-3 {
+            background-color: #f0fdf4;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2316a34a' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .pixel-pattern-4 {
+            background-color: #fee2e2;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dc2626' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .pixel-pattern-5 {
+            background-color: #dcfce7;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2316a34a' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-projects-section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .pixel-projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+            z-index: -1;
+        }
+
+        .pixel-pattern-6 {
+            background-color: #fef08a;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ca8a04' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .pixel-pattern-7 {
+            background-color: #dbeafe;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h40v40H0V0zm1 1v38h38V1H1z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Pixel art cursor - Default (purple) */
+        html {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%234c1d95'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23a78bfa'/%3E%3C/svg%3E"), auto;
+        }
+
+        /* Pointer cursor for clickable elements (pink) */
+        a,
+        button,
+        .pixel-nav-item,
+        [onclick],
+        [role="button"],
+        [tabindex="0"],
+        .pixel-btn,
+        .pixel-project-card,
+        .pixel-certificate-card {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%23f472b6'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23f9a8d4'/%3E%3C/svg%3E"), pointer;
+        }
+
+        /* All circular navigation styles have been completely removed */
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            background-attachment: fixed;
+            background-size: cover;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1e293b;
+            border: 2px solid #1e293b;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #1e293b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .name-title {
+            font-family: 'Press Start 2P', monospace;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 5vw, 2.5rem);
+            line-height: 1.3;
+            margin: 0 auto 1.5rem;
+            padding: 0 1rem;
+            letter-spacing: 1px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: none;
+            text-rendering: pixelated;
+            text-align: center;
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
+            min-height: 1.2em;
+            position: relative;
+            overflow: visible;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .name-title {
+                font-size: clamp(1.1rem, 7vw, 1.8rem);
+                padding: 0 0.5rem;
+                line-height: 1.4;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        .name-text {
+            display: inline-block;
+            color: #1e293b;
+            /* Dark blue color to match the site's theme */
+            position: relative;
+            opacity: 0;
+            transform: translateY(-100vh);
+            animation: dropIn 0.8s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+            will-change: transform, opacity;
+            margin: 0 1px;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for better readability */
+        }
+
+        @keyframes dropIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-100vh);
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tagline {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+            color: #475569;
+            margin: 0 auto 2.5rem;
+            max-width: 600px;
+            line-height: 1.6;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: none;
+            text-rendering: pixelated;
+            text-align: center;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
+        .repeating-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            pointer-events: none;
+            z-index: 0;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        .text-line {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 3.5vw;
+            color: rgba(30, 41, 59, 0.08);
+            white-space: nowrap;
+            animation: scrollText 60s linear infinite;
+            line-height: 1.5;
+            padding: 0.5em 0;
+            text-rendering: optimizeSpeed;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            width: 200%;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .text-line:nth-child(1) {
+            text-align: left;
+            animation-delay: 0s;
+            animation-duration: 60s;
+        }
+
+        .text-line:nth-child(2) {
+            text-align: right;
+            animation-delay: -12s;
+            animation-duration: 70s;
+            animation-direction: reverse;
+        }
+
+        .text-line:nth-child(3) {
+            text-align: left;
+            animation-delay: -24s;
+            animation-duration: 80s;
+        }
+
+        .text-line:nth-child(4) {
+            text-align: right;
+            animation-delay: -36s;
+            animation-duration: 90s;
+            animation-direction: reverse;
+        }
+
+        .text-line:nth-child(5) {
+            text-align: left;
+            animation-delay: -48s;
+            animation-duration: 100s;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .pixel-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            border-top: 2px solid #e2e8f0;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.6rem;
+            z-index: 10;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link {
+            color: #475569;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+
+        .footer-divider {
+            color: #cbd5e1;
+            margin: 0 0.25rem;
+        }
+
+        .social-links {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icon {
+            color: #64748b;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #3b82f6;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.5rem;
+        }
+
+        /* Scroll Animation Styles */
+        .section-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section[id^="konten"], #about, #skills, #projects, #certificates, #contact');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe each section
+            sections.forEach(section => {
+                section.classList.add('section-animate');
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body class="antialiased">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <!-- Konten 1 -->
+    <section id="konten-1" class="section-animate pixel-pattern-1" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; padding: 0; overflow: hidden;">
+        <div class="hero flex items-center justify-center text-center w-full" style="height: 100%; margin: 0; padding: 0;">
+            <div class="hero-content max-w-4xl w-full flex flex-col items-center">
+                <div class="text-center w-full">
+                    <h1 class="name-title" id="animated-name"></h1>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const name = 'ALIF RIMU SABILA';
+                            const nameElement = document.getElementById('animated-name');
+
+                            // Split the name into characters and wrap each in a span
+                            const chars = name.split('');
+                            let html = '';
+
+                            chars.forEach((char, index) => {
+                                // Each character has a sequential delay (0.1s between each)
+                                const delay = 0.1 * index;
+
+                                // Add a space for the space character to maintain spacing
+                                if (char === ' ') {
+                                    html += '<span class="name-text" style="animation-delay: ' + delay + 's">&nbsp;</span>';
+                                } else {
+                                    html += '<span class="name-text" style="animation-delay: ' + delay + 's">' + char + '</span>';
+                                }
+                            });
+
+                            nameElement.innerHTML = html;
+                        });
+                    </script>
+                    <p class="tagline">UI/UX DESIGNER & WEB ARTISAN</p>
+                    <div class="button-group flex flex-wrap gap-6 justify-center mt-10">
+                        <a href="#projects" class="pixel-btn pixel-btn-primary"
+                            onclick="event.preventDefault(); document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });">
+                            <span>View My Work</span>
+                            <span class="pixel-btn-arrow">→</span>
+                        </a>&emsp;&emsp;&emsp;
+                        <a href="#contact" class="pixel-btn pixel-btn-secondary"
+                            onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+                            <span>Contact Me</span>
+                            <span class="pixel-btn-icon">✉️</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="repeating-text">
+                <div class="text-line">Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif
+                    Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila •</div>
+                <div class="text-line">Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif
+                    Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila •</div>
+                <div class="text-line">Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif
+                    Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila •</div>
+                <div class="text-line">Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif
+                    Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila •</div>
+                <div class="text-line">Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif
+                    Rimu Sabila • Alif Rimu Sabila • Alif Rimu Sabila • Alif Rimu </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konten 2 - Navigation & About Me -->
+    <section id="about" class="pixel-about-section section-animate pixel-pattern-3">
+        <!-- Navigation -->
+        <div class="pixel-nav-section" style="padding: 2rem 0 0;">
+            <div class="pixel-nav">
+                <div class="pixel-grid">
+                    <a href="#about" class="pixel-nav-item about" data-section="about">
+                        <div class="pixel-nav-icon">👤</div>
+                        <div>About Me</div>
+                    </a>
+                    <a href="#skills" class="pixel-nav-item skills" data-section="skills">
+                        <div class="pixel-nav-icon">💻</div>
+                        <div>Skills</div>
+                    </a>
+                    <a href="#projects" class="pixel-nav-item projects" data-section="projects">
+                        <div class="pixel-nav-icon">📁</div>
+                        <div>Projects</div>
+                    </a>
+                    <a href="#certificates" class="pixel-nav-item certificates" data-section="certificates">
+                        <div class="pixel-nav-icon">🏆</div>
+                        <div>Certificates</div>
+                    </a>
+                    <a href="#contact" class="pixel-nav-item contact" data-section="contact">
+                        <div class="pixel-nav-icon">✉️</div>
+                        <div>Contact</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me Content -->
+        <div class="pixel-about-container">
+            <h2 class="pixel-about-title">ABOUT ME</h2>
+
+            <div class="pixel-about-content">
+                <p class="pixel-text-line">
+                    I'm Alif Rimu Sabila, an Informatics Engineering student with an interest in UI/UX design and web
+                    development.
+                </p>
+                <p class="pixel-text-line">
+                    I enjoy creating clean, usable, and visually pleasing interfaces.
+                </p>
+                <p class="pixel-text-line">
+                    For me, technology is a way to make things simpler and more enjoyable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .pixel-about-section {
+            padding: 1rem 1rem 4rem;
+            position: relative;
+        }
+
+        .pixel-nav-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pixel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 0 1rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pixel-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 0.75rem;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1e293b;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.65rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid #1e293b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #1e293b;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .pixel-nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-nav-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pixel-nav-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pixel-nav-item:hover .pixel-nav-icon {
+            transform: scale(1.1);
+        }
+
+        /* Navigation hover colors matching section backgrounds */
+        .pixel-nav-item.about:hover {
+            background-color: #f0fdf4;
+            border-color: #16a34a;
+        }
+
+        .pixel-nav-item.skills:hover {
+            background-color: #fee2e2;
+            border-color: #dc2626;
+        }
+
+        .pixel-nav-item.projects:hover {
+            background-color: #dcfce7;
+            border-color: #16a34a;
+        }
+
+        .pixel-nav-item.certificates:hover {
+            background-color: #fef08a;
+            border-color: #ca8a04;
+        }
+
+        .pixel-nav-item.contact:hover {
+            background-color: #dbeafe;
+            border-color: #2563eb;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+                padding: 0 0.75rem 1.5rem;
+            }
+
+            .pixel-nav-item {
+                padding: 1rem 0.5rem;
+                font-size: 0.6rem;
+            }
+
+            .pixel-nav-icon {
+                font-size: 1.5rem;
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pixel-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                padding: 0 0.5rem 1rem;
+            }
+
+            .pixel-nav-item {
+                padding: 0.75rem 0.25rem;
+                font-size: 0.5rem;
+            }
+
+            .pixel-nav-icon {
+                font-size: 1.25rem;
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        .pixel-about-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            /* Added top margin */
+            padding: 0 1rem;
+        }
+
+        .pixel-about-title {
+            margin-top: 2rem;
+            /* Added space above the title */
+        }
+
+        .pixel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pixel-section-title {
+            font-family: 'Press Start 2P', monospace;
+            color: #1e293b;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            text-shadow: 3px 3px 0 #cbd5e1;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 2rem;
+            background: #f8fafc;
+        }
+
+        .pixel-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pixel-skill-card {
+            background: white;
+            border: 3px solid #1e293b;
+            padding: 1.5rem;
+            box-shadow: 6px 6px 0 #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-skill-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 12px 12px 0 #1e293b, 0 0 0 2px #1e293b;
+        }
+
+        .pixel-skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 1rem;
+        }
+
+        .pixel-skill-icon {
+            width: 50px;
+            height: 50px;
+            background: #f1f5f9;
+            border: 3px solid #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-icon {
+            width: 30px;
+            height: 30px;
+            image-rendering: pixelated;
+        }
+
+        .pixel-icon.ui-ux {
+            background: conic-gradient(#3b82f6 0% 70%,
+                    #93c5fd 70% 100%);
+            border: 3px solid #1e293b;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pixel-icon.ui-ux::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #1e293b;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+        }
+
+        .pixel-icon.web-dev {
+            background: #1e293b;
+            position: relative;
+        }
+
+        .pixel-icon.web-dev::before {
+            content: '</>';
+            position: absolute;
+            color: white;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pixel-icon.office {
+            background: #d83b01;
+            position: relative;
+            border: 3px solid #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pixel-icon.office::before {
+            content: 'MS';
+            position: absolute;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            color: white;
+            line-height: 1;
+        }
+
+        .pixel-skill-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+            color: #1e293b;
+            margin: 0;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .pixel-skill-level {
+            width: 100%;
+            height: 20px;
+            background: #e2e8f0;
+            border: 2px solid #1e293b;
+            position: relative;
+            margin-top: 0.5rem;
+        }
+
+        .pixel-level-bar {
+            height: 100%;
+            background: #e2e8f0;
+            width: 0;
+            transition: all 0.7s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-skill-card.active .pixel-level-bar,
+        .pixel-skill-card:hover .pixel-level-bar {
+            background: linear-gradient(90deg, #3b82f6, #2563eb);
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .pixel-skill-card {
+            transition: transform 0.2s ease;
+        }
+
+        .pixel-skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pixel-level-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.1) 4px,
+                    transparent 4px,
+                    transparent 8px);
+        }
+
+        .pixel-level-text {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.6rem;
+            color: #1e293b;
+        }
+
+        .pixel-version-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #3b82f6;
+            color: white;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.6rem;
+            padding: 0.25rem 0.5rem;
+            border: 2px solid #1e293b;
+            box-shadow: 2px 2px 0 #1e293b;
+            z-index: 1;
+        }
+
+        .pixel-version-info {
+            background: #f1f5f9;
+            border: 2px solid #1e293b;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .pixel-version-detail {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pixel-version-detail:before {
+            content: '•';
+            position: absolute;
+            left: 0.25rem;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        .pixel-skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .pixel-tag {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            background: #e2e8f0;
+            padding: 0.25rem 0.5rem;
+            border: 2px solid #1e293b;
+            color: #1e293b;
+        }
+
+        .pixel-skill-examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .pixel-example {
+            text-align: center;
+        }
+
+        .pixel-example-preview {
+            background: white;
+            border: 3px solid #1e293b;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pixel-ui-preview {
+            width: 100%;
+            height: 80px;
+            background: #f1f5f9;
+            border: 2px solid #1e293b;
+            padding: 0.5rem;
+        }
+
+        .pixel-ui-header {
+            height: 10px;
+            background: #3b82f6;
+            margin-bottom: 0.5rem;
+            border: 2px solid #1e293b;
+        }
+
+        .pixel-ui-content {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pixel-ui-element {
+            flex: 1;
+            height: 40px;
+            background: white;
+            border: 2px solid #1e293b;
+        }
+
+        .pixel-dashboard-preview {
+            width: 100%;
+            height: 80px;
+            background: #f1f5f9;
+            border: 2px solid #1e293b;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-dashboard-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: #3b82f6;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .pixel-dashboard-sidebar {
+            background: #1e293b;
+            border-right: 2px solid #1e293b;
+            margin-top: 12px;
+        }
+
+        .pixel-dashboard-main {
+            padding: 1rem;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 12px;
+        }
+
+        .pixel-chart {
+            width: 100%;
+            height: 40px;
+            background: repeating-linear-gradient(45deg,
+                    #3b82f6,
+                    #3b82f6 5px,
+                    #2563eb 5px,
+                    #2563eb 10px);
+            border: 2px solid #1e293b;
+        }
+
+        .pixel-example-label {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pixel-skill-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillBars = document.querySelectorAll('.pixel-skill-level');
+
+            skillBars.forEach(bar => {
+                const level = bar.getAttribute('data-level');
+                const barElement = bar.querySelector('.pixel-level-bar');
+                const textElement = bar.querySelector('.pixel-level-text');
+
+                // Initialize with 0%
+                textElement.textContent = '0%';
+
+                // Mouse enter event
+                bar.closest('.pixel-skill-card').addEventListener('mouseenter', function () {
+                    if (!this.classList.contains('active')) {
+                        barElement.style.width = level + '%';
+
+                        // Animate the percentage counter
+                        let current = 0;
+                        const increment = level / 20; // Adjust speed of counter
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= level) {
+                                current = level;
+                                clearInterval(timer);
+                                this.classList.add('active');
+                            }
+                            textElement.textContent = Math.round(current) + '%';
+                        }, 20);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .pixel-skills-section {
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-skills-section .pixel-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .pixel-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <!-- Konten 4 - Skills -->
+    <section id="skills" class="pixel-skills-section section-animate pixel-pattern-4">
+        <div class="pixel-container">
+            <h2 class="pixel-section-title">MY SKILLS</h2>
+
+            <div class="pixel-skills-grid">
+                <!-- UI/UX Design -->
+                <div class="pixel-skill-card">
+                    <div class="pixel-skill-header">
+                        <div class="pixel-skill-icon">
+                            <div class="pixel-icon ui-ux"></div>
+                        </div>
+                        <h3 class="pixel-skill-title">UI/UX Design</h3>
+                        <div class="pixel-skill-level" data-level="60">
+                            <div class="pixel-level-bar"></div>
+                            <div class="pixel-level-text">60%</div>
+                        </div>
+                        <div class="pixel-skill-tags">
+                            <span class="pixel-tag">Figma</span>
+                        </div>
+                    </div>
+                    <div class="pixel-version-info">
+                        <div class="pixel-version-detail">Not responsive</div>
+                        <div class="pixel-version-detail">Supports one animation interaction at a time</div>
+                        <div class="pixel-version-detail">Still developing proficiency in custom border styling</div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="pixel-skill-card">
+                    <div class="pixel-skill-header">
+                        <div class="pixel-skill-icon">
+                            <div class="pixel-icon web-dev"></div>
+                        </div>
+                        <h3 class="pixel-skill-title">Web Development</h3>
+                        <div class="pixel-skill-level" data-level="65">
+                            <div class="pixel-level-bar"></div>
+                            <div class="pixel-level-text">65%</div>
+                        </div>
+                        <div class="pixel-skill-tags">
+                            <span class="pixel-tag">HTML/CSS</span>
+                            <span class="pixel-tag">Laravel</span>
+                        </div>
+                    </div>
+
+                    <div class="pixel-version-info">
+                        <div class="pixel-version-detail">Static site</div>
+                        <div class="pixel-version-detail">Built with AI assistance</div>
+                        <div class="pixel-version-detail">No further updates planned</div>
+                    </div>
+
+                </div>
+
+                <!-- Microsoft Office -->
+                <div class="pixel-skill-card">
+                    <div class="pixel-skill-header">
+                        <div class="pixel-skill-icon">
+                            <div class="pixel-icon office"></div>
+                        </div>
+                        <h3 class="pixel-skill-title">Microsoft Office</h3>
+                        <div class="pixel-skill-level" data-level="56">
+                            <div class="pixel-level-bar"></div>
+                            <div class="pixel-level-text">56%</div>
+                        </div>
+                    </div>
+                    <div class="pixel-skill-tags">
+                        <span class="pixel-tag">Word</span>
+                        <span class="pixel-tag">PowerPoint</span>
+                        <span class="pixel-tag">Excel</span>
+                    </div>
+                    <div class="pixel-version-info">
+                        <div class="pixel-version-detail">Microsoft Word 85%</div>
+                        <div class="pixel-version-detail">Microsoft PowerPoint 65%</div>
+                        <div class="pixel-version-detail">Microsoft Excel 20%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .pixel-nav-section {
+            background-color: #f8fafc;
+            padding: 4rem 1rem;
+            position: relative;
+            z-index: 1;
+            border-top: 4px solid #1e293b;
+            border-bottom: 4px solid #1e293b;
+        }
+
+        .pixel-about-section {
+            background: #ffffff;
+            position: relative;
+            z-index: 1;
+            padding: 5rem 1rem;
+            border-top: 2px solid #1e293b;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .pixel-about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pixel-about-title {
+            font-family: 'Press Start 2P', monospace;
+            color: #1e293b;
+            text-shadow: 3px 3px 0 #cbd5e1;
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .pixel-about-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #3b82f6;
+            margin: 1rem auto;
+        }
+
+        .pixel-about-content {
+            background: #f8fafc;
+            padding: 2rem;
+            border: 2px solid #1e293b;
+            box-shadow: 6px 6px 0 #1e293b;
+            position: relative;
+        }
+
+        .pixel-about-content::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px dashed rgba(30, 41, 59, 0.2);
+            pointer-events: none;
+        }
+
+        .pixel-text-line {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-text-line .word {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            margin-right: 0.4em;
+        }
+
+        .pixel-text-line .char {
+            display: inline-block;
+            color: white;
+            text-shadow: 0 0 1px #1e293b;
+        }
+
+        /* Spasi khusus untuk menjaga jarak antar kata */
+        .pixel-text-line .space {
+            display: inline-block;
+            width: 0.4em;
+            height: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-about-section {
+                padding: 3rem 1rem;
+            }
+
+            .pixel-about-title {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .pixel-about-content {
+                padding: 1.5rem;
+            }
+
+            .pixel-text-line {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <!-- Load GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Split text into words and characters
+            const lines = document.querySelectorAll('.pixel-text-line');
+
+            lines.forEach(line => {
+                const text = line.textContent;
+                line.innerHTML = '';
+
+                // Split into words
+                const words = text.split(/(\s+)/);
+
+                words.forEach(word => {
+                    if (word.trim().length > 0) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.className = 'word';
+
+                        // Split word into characters
+                        word.split('').forEach((char, i) => {
+                            const charSpan = document.createElement('span');
+                            charSpan.className = 'char';
+                            charSpan.textContent = char;
+                            charSpan.style.setProperty('--char-index', i);
+                            wordSpan.appendChild(charSpan);
+                        });
+
+                        line.appendChild(wordSpan);
+                    } else if (word.match(/\s+/)) {
+                        // Handle multiple spaces
+                        const spaceSpan = document.createElement('span');
+                        spaceSpan.className = 'space';
+                        line.appendChild(spaceSpan);
+                    }
+                });
+            });
+
+            // Animation with Intersection Observer
+            const aboutSection = document.querySelector('.pixel-about-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateText();
+                        observer.unobserve(aboutSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(aboutSection);
+
+            function animateText() {
+                const chars = document.querySelectorAll('.char');
+                const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+                // Animate each line sequentially
+                const lines = document.querySelectorAll('.pixel-text-line');
+
+                lines.forEach((line, lineIndex) => {
+                    const lineChars = line.querySelectorAll('.char');
+
+                    tl.to(lineChars, {
+                        color: '#1e293b',
+                        duration: 0.05,
+                        stagger: {
+                            each: 0.05,
+                            from: "start"
+                        },
+                        delay: lineIndex * 0.5 // Delay between lines
+                    }, `+=${lineIndex * 0.2}`);
+                });
+            }
+        });
+    </script>
+
+    <!-- Removed floating pixel ball and circular navigation -->
+
+    <style>
+        /* Removed pixel ball and circular navigation styles */
+    </style>
+
+    <script>
+        // Navigation arrow functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const navArrow = document.getElementById('nav-arrow');
+            const navItems = document.querySelectorAll('.pixel-nav-item');
+            let currentPosition = 0;
+
+            // Position arrow under the current nav item
+            function positionArrow() {
+                if (navItems.length === 0) return;
+
+                const currentNav = navItems[currentPosition];
+                const navRect = currentNav.getBoundingClientRect();
+                const containerRect = currentNav.closest('.pixel-nav').getBoundingClientRect();
+
+                navArrow.style.left = (navRect.left + (navRect.width / 2) - (navArrow.offsetWidth / 2) - containerRect.left) + 'px';
+            }
+
+            // Initialize arrow position
+            if (navItems.length > 0) {
+                positionArrow();
+                navItems[0].classList.add('active');
+            }
+
+            // Handle keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                const navCount = navItems.length;
+
+                if (e.key === 'ArrowRight' && currentPosition < navCount - 1) {
+                    currentPosition++;
+                    updateActiveNav();
+                    positionArrow();
+                } else if (e.key === 'ArrowLeft' && currentPosition > 0) {
+                    currentPosition--;
+                    updateActiveNav();
+                    positionArrow();
+                } else if (e.key === 'Enter') {
+                    // Navigate to the selected section
+                    navItems[currentPosition].click();
+                }
+            });
+
+            // Update active nav item
+            function updateActiveNav() {
+                navItems.forEach((item, index) => {
+                    if (index === currentPosition) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            // Update arrow position on window resize
+            window.addEventListener('resize', positionArrow);
+
+            // Add click handler to nav items
+            // Add click event to scroll to top
+            navArrow.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Removed pixel ball and circular navigation JavaScript
+        });
+
+        // Smooth scroll function
+        function smoothScrollTo(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Add smooth scroll to all navigation links
+        document.addEventListener('DOMContentLoaded', function () {
+            // Prevent default anchor behavior and use smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {  // Only prevent default if it's an anchor link
+                        e.preventDefault();
+                        smoothScrollTo(href);
+
+                        // Update URL without page jump
+                        if (history.pushState) {
+                            history.pushState(null, null, href);
+                        } else {
+                            location.hash = href;
+                        }
+                    }
+                });
+            });
+
+            // Handle back/forward navigation
+            window.addEventListener('popstate', function (e) {
+                smoothScrollTo(location.hash);
+            });
+            // Navigation arrow functionality is now handled above
+        });
+    </script>
+
+    <style>
+        /* Peek Image */
+        .peek-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: auto;
+            z-index: 999;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .peek-image:hover {
+            transform: scale(1.05);
+        }
+
+        .peek-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .peek-image {
+                width: 80px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            border: 4px solid #1e293b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: #1e293b;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+        }
+
+        .pixel-project-screen {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pixel-project-screen:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes scaleUpBounce {
+            0% {
+                transform: scale(0.5) rotate(-5deg);
+                opacity: 0;
+                filter: blur(2px);
+            }
+
+            70% {
+                transform: scale(1.05) rotate(2deg);
+                opacity: 1;
+                filter: blur(0);
+            }
+
+            85% {
+                transform: scale(0.98) rotate(-1deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .pixel-project-card {
+            animation: scaleUpBounce 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            transform-origin: center;
+            opacity: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pixel-project-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 12px 12px 0 #1e293b, 0 0 0 2px #1e293b;
+        }
+    </style>
+
+    <!-- Konten 5 - Projects -->
+    <section id="projects" class="pixel-projects-section section-animate pixel-pattern-5">
+        <div class="pixel-container">
+            <h2 class="pixel-section-title">FEATURED PROJECT</h2>
+
+            <!-- Main Project -->
+            <div class="pixel-main-project">
+                <div class="pixel-project-card">
+                    <div class="pixel-project-image" style="background-color: #e0f2fe;">
+                        <div class="pixel-project-browser">
+                            <div class="pixel-dot red"></div>
+                            <div class="pixel-dot yellow"></div>
+                            <div class="pixel-dot green"></div>
+                        </div>
+                        <div class="pixel-project-preview">
+                            <div class="pixel-project-screen" onclick="openProjectLightbox('img/Thomas.png')">
+                                <img src="img/Thomas.png" alt="Thomas Project Preview"
+                                    class="w-full h-full object-cover"
+                                    style="object-fit: cover; width: 100%; height: 100%; cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pixel-project-info">
+                        <h3 class="pixel-text text-2xl font-bold mb-3">E-Commerce</h3>
+                        <p class="pixel-desc text-gray-700 mb-4">Website E-Commerce built with Laravel and Tailwind CSS.
+                            This project showcases my skills and previous work in a clean, modern interface. The site is
+                            fully responsive and features smooth animations for an engaging user experience.</p>
+                        <div class="pixel-tags flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">PHP</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Projects Grid -->
+            <div class="pixel-other-projects">
+                <!-- Project 1 -->
+                <div class="pixel-project-card-small">
+                    <div class="pixel-project-image-small"
+                        style="background-color: #f0fdf4; position: relative; overflow: hidden;">
+                        <div class="pixel-project-browser">
+                            <div class="pixel-dot red"></div>
+                            <div class="pixel-dot yellow"></div>
+                            <div class="pixel-dot green"></div>
+                        </div>
+                        <img src="img/MiniGame.png" alt="Mini Game Project"
+                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                            onclick="openProjectLightbox('img/MiniGame.png')">
+                    </div>
+                    <div class="pixel-project-info-small">
+                        <h4 class="pixel-text-sm text-lg font-bold mb-2">Mini Games</h4>
+                        <p class="pixel-desc-sm text-gray-600 mb-4">games to sharpen children's focus and reflexes</p>
+                        <div class="pixel-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs">Python</span>
+                            <span class="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs">Google
+                                Colab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="pixel-project-card-small">
+                    <div class="pixel-project-image-small"
+                        style="background-color: #fef2f2; position: relative; overflow: hidden;">
+                        <div class="pixel-project-browser">
+                            <div class="pixel-dot red"></div>
+                            <div class="pixel-dot yellow"></div>
+                            <div class="pixel-dot green"></div>
+                        </div>
+                        <img src="img/posterSweetcream.png" alt="Sweet Cream Poster"
+                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                            onclick="openProjectLightbox('img/posterSweetcream.png')">
+                    </div>
+                    <div class="pixel-project-info-small">
+                        <h4 class="pixel-text-sm text-lg font-bold mb-2">Poster</h4>
+                        <p class="pixel-desc-sm text-gray-600 mb-4">a red poster that gives passion to the person who
+                            sees it, and a picture of a drink that feels refreshing</p>
+                        <div class="pixel-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-0.5 bg-red-100 text-red-800 rounded-full text-xs">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="pixel-project-card-small">
+                    <div class="pixel-project-image-small"
+                        style="background-color: #f5f0ff; position: relative; overflow: hidden;">
+                        <div class="pixel-project-browser">
+                            <div class="pixel-dot red"></div>
+                            <div class="pixel-dot yellow"></div>
+                            <div class="pixel-dot green"></div>
+                        </div>
+                        <img src="img/posterviews.png" alt="Poster Views"
+                            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                            onclick="openProjectLightbox('img/posterviews.png')">
+                    </div>
+                    <div class="pixel-project-info-small">
+                        <h4 class="pixel-text-sm text-lg font-bold mb-2">Poster</h4>
+                        <p class="pixel-desc-sm text-gray-600 mb-4">Unlimited views</p>
+                        <div class="pixel-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-0.5 bg-purple-100 text-purple-800 rounded-full text-xs">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <!-- See More Button -->
+            <div class="flex justify-end mt-16 mb-8 pr-8">
+                <a href="project.html" class="pixel-btn pixel-btn-more">
+                    <span>SEE MORE</span>
+                    <span class="pixel-btn-arrow">↓</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .pixel-projects-section {
+            padding: 4rem 1rem;
+            /* Removed borders */
+            padding-bottom: 8rem;
+        }
+
+        /* Main Project */
+        .pixel-main-project {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pixel-project-card {
+            background: white;
+            border: 3px solid #1e293b;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .pixel-project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-project-image {
+            flex: 1;
+            min-height: 350px;
+            position: relative;
+            border-right: 3px solid #1e293b;
+        }
+
+        .pixel-project-info {
+            flex: 1;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Other Projects Grid */
+        .pixel-other-projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pixel-project-card-small {
+            background: white;
+            border: 3px solid #1e293b;
+            border-radius: 0;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 6px 6px 0 #1e293b;
+        }
+
+        .pixel-project-card-small:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 12px 12px 0 #1e293b, 0 0 0 2px #1e293b;
+        }
+
+        .pixel-project-image-small {
+            height: 180px;
+            position: relative;
+            border-bottom: 3px solid #1e293b;
+            background-color: white;
+        }
+
+        .pixel-project-info-small {
+            padding: 1.5rem 1.25rem 1.25rem;
+        }
+
+        /* Pixel Text Styles */
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        }
+
+        .pixel-text {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.25rem;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+            text-transform: uppercase;
+            color: #1e293b;
+        }
+
+        .pixel-text-sm {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+            text-transform: uppercase;
+            color: #1e293b;
+        }
+
+        .pixel-desc {
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: #4b5563;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .pixel-desc-sm {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: #6b7280;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        /* Pixel Button Styles */
+        .pixel-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s ease;
+            transform: translate(0, 0);
+            box-shadow: 4px 4px 0 #0f172a;
+            border-radius: 0;
+            z-index: 1;
+        }
+
+        .pixel-btn span {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.2s ease;
+        }
+
+        .pixel-btn .pixel-btn-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .pixel-btn .pixel-btn-icon {
+            font-size: 1.1em;
+            line-height: 1;
+        }
+
+        /* Primary Button */
+        .pixel-btn-primary {
+            background-color: #F4538A;
+            color: white;
+            border: 2px solid #C2185B;
+        }
+
+        .pixel-btn-primary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #C2185B;
+            background-color: #E91E63;
+        }
+
+        .pixel-btn-primary:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #0f172a;
+        }
+
+        /* Secondary Button */
+        .pixel-btn-secondary {
+            background-color: #FAA300;
+            color: white;
+            border: 2px solid #C17A00;
+        }
+
+        .pixel-btn-secondary:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #C17A00;
+            background-color: #E59400;
+        }
+
+        .pixel-btn-secondary:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #C17A00;
+        }
+
+        /* More Button */
+        .pixel-btn-more {
+            background-color: #F4538A;
+            color: white;
+            border: 2px solid #C2185B;
+            padding: 10px 20px;
+        }
+
+        .pixel-btn-more:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #C2185B;
+            background-color: #E91E63;
+        }
+
+        .pixel-btn-more:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 #9f1239;
+        }
+
+        /* Button Hover Effects */
+        .pixel-btn:hover .pixel-btn-arrow {
+            transform: translateX(3px);
+        }
+
+        /* Button Pseudo Elements for Pixel Effect */
+        .pixel-btn::before,
+        .pixel-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        .pixel-btn::before {
+            top: -4px;
+            left: -4px;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+        }
+
+        .pixel-btn::after {
+            bottom: -4px;
+            right: -4px;
+            border-bottom: 2px solid #0f172a;
+            border-right: 2px solid #0f172a;
+        }
+
+        /* Konten 6 - Certificates -->
+        /* Certificates Section */
+        .pixel-certificates-section {
+            padding: 4rem 1rem;
+            /* Removed borders */
+        }
+
+        .pixel-certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .pixel-certificate-card {
+            background: white;
+            border: 3px solid #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pixel-certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-certificate-image {
+            position: relative;
+            padding-top: 60%;
+            /* More compact aspect ratio */
+            overflow: hidden;
+        }
+
+        .pixel-certificate-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pixel-certificate-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            padding: 0.8rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .pixel-certificate-card:hover .pixel-certificate-overlay {
+            transform: translateY(0);
+        }
+
+        .pixel-certificate-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.7rem;
+            margin-bottom: 0.3rem;
+            color: #F4538A;
+            line-height: 1.3;
+        }
+
+        .pixel-certificate-issuer {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .pixel-certificate-date {
+            display: inline-block;
+            background: #FAA300;
+            color: white;
+            padding: 0.1rem 0.6rem;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Lightbox Styles */
+        .pixel-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .pixel-lightbox.active {
+            display: flex;
+        }
+
+        .pixel-lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .pixel-lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 4px solid #1e293b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .pixel-lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .pixel-other-projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .pixel-certificates-grid {
+                grid-template-columns: repeat(3, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pixel-certificates-grid {
+                grid-template-columns: repeat(2, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .pixel-project-card {
+                flex-direction: column;
+            }
+
+            .pixel-project-image {
+                width: 100%;
+                min-height: 250px;
+                border-right: none;
+                border-bottom: 3px solid #1e293b;
+            }
+
+            .pixel-other-projects {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+
+        box-shadow: 4px 4px 0 #1e293b;
+        transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+        overflow: hidden;
+        }
+
+        .pixel-project-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 #1e293b;
+        }
+
+        .pixel-project-image {
+            height: 200px;
+            position: relative;
+            border-bottom: 3px solid #1e293b;
+        }
+
+        .pixel-project-browser {
+            height: 30px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            border-bottom: 3px solid #1e293b;
+        }
+
+        .pixel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+            border: 2px solid #1e293b;
+        }
+
+        .pixel-dot.red {
+            background-color: #ef4444;
+        }
+
+        .pixel-dot.yellow {
+            background-color: #f59e0b;
+        }
+
+        .pixel-dot.green {
+            background-color: #10b981;
+        }
+
+        .pixel-project-preview {
+            height: calc(100% - 30px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .pixel-project-screen {
+            width: 90%;
+            height: 90%;
+            background: white;
+            border: 3px solid #1e293b;
+        }
+
+        .pixel-project-info {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .pixel-project-info h3 {
+            font-family: 'Press Start 2P', monospace;
+            color: #1e293b;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pixel-project-info p {
+            color: #475569;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .pixel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pixel-tags span {
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            color: #1e293b;
+            border: 2px solid #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Project Lightbox Container -->
+    <div id="projectLightbox" class="pixel-lightbox">
+        <span class="pixel-close-lightbox">&times;</span>
+        <div class="pixel-lightbox-content">
+            <img id="projectLightboxImg" class="pixel-lightbox-img" src="" alt="Project Preview">
+        </div>
+    </div>
+
+    <!-- Certificate Lightbox Container -->
+    <div id="certificateLightbox" class="pixel-lightbox">
+        <div class="pixel-lightbox-content">
+            <img id="lightboxImage" src="" alt="Certificate" class="pixel-lightbox-img">
+            <div id="lightboxCaption" class="pixel-lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="pixel-certificates-section section-animate pixel-pattern-6">
+        <div class="pixel-container">
+            <h2 class="pixel-section-title">MY CERTIFICATES</h2>
+
+            <div class="pixel-certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="pixel-certificate-card">
+                    <div class="pixel-certificate-image">
+                        <img src="img/img Certificates/MySkillDataVisualizationExcel.png" alt="Certificate 1"
+                            class="pixel-img">
+                        <div class="pixel-certificate-overlay">
+                            <h3 class="pixel-certificate-title">Excel (Data Visualization)</h3>
+                            <p class="pixel-certificate-issuer">My Skill</p>
+                            <span class="pixel-certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="pixel-certificate-card">
+                    <div class="pixel-certificate-image">
+                        <img src="img\img Certificates\CodeGenerationandOptimizationIBMGranite.png" alt="Certificate 1"
+                            class="pixel-img">
+                        <div class="pixel-certificate-overlay">
+                            <h3 class="pixel-certificate-title">IBM Granite (AI)</h3>
+                            <p class="pixel-certificate-issuer">Hactiv8</p>
+                            <span class="pixel-certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="pixel-certificate-card">
+                    <div class="pixel-certificate-image">
+                        <img src="img\img Certificates\Blockkchain.png" alt="Certificate 1" class="pixel-img">
+                        <div class="pixel-certificate-overlay">
+                            <h3 class="pixel-certificate-title">Blockchain and Cryptocurrency</h3>
+                            <p class="pixel-certificate-issuer">Universitas Pamulang</p>
+                            <span class="pixel-certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="pixel-certificate-card">
+                    <div class="pixel-certificate-image">
+                        <img src="img\img Certificates\Pengembang Aplikasi.jpeg" alt="Certificate 1" class="pixel-img">
+                        <div class="pixel-certificate-overlay">
+                            <h3 class="pixel-certificate-title">Web Developer</h3>
+                            <p class="pixel-certificate-issuer">Universitas Pamulang</p>
+                            <span class="pixel-certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="pixel-certificate-card">
+                    <div class="pixel-certificate-image">
+                        <img src="img\img Certificates\Desain Grafis.jpeg" alt="Certificate 1" class="pixel-img">
+                        <div class="pixel-certificate-overlay">
+                            <h3 class="pixel-certificate-title">Desain Grafis</h3>
+                            <p class="pixel-certificate-issuer">Universitas Pamulang</p>
+                            <span class="pixel-certificate-date">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="flex justify-end mt-8 pr-4">
+                <a href="certificate.html" class="pixel-btn pixel-btn-more">
+                    <span>VIEW ALL</span>
+                    <span class="pixel-btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boat Section -->
+    <section class="boat-section pixel-pattern-6"
+        style="height: 300px; background: #f8fafc; position: relative; overflow: hidden;">
+        <div class="pixel-container" style="height: 100%; position: relative;">
+            <img id="boat" src="img/boat.png" alt="Boat"
+                style="width: 100px; position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); transition: transform 0.1s ease-out;">
+        </div>
+    </section>
+
+    <!-- Spacer with matching background -->
+    <div style="height: 100px; background: #f8fafc;"></div>
+
+    </div>
+</body>
+
+<script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const lightbox = document.getElementById('certificateLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+
+        // Add click event to all certificate images
+        document.querySelectorAll('.pixel-certificate-image').forEach(card => {
+            const img = card.querySelector('img');
+            const title = card.querySelector('.pixel-certificate-title')?.textContent || '';
+            const issuer = card.querySelector('.pixel-certificate-issuer')?.textContent || '';
+
+            card.style.cursor = 'pointer';
+
+            card.addEventListener('click', function () {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = `${title} - ${issuer}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox when clicking anywhere
+        lightbox.addEventListener('click', function () {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
+
+<script>
+    // Project Lightbox functionality
+    function openProjectLightbox(imgSrc) {
+        const lightbox = document.getElementById('projectLightbox');
+        const lightboxImg = document.getElementById('projectLightboxImg');
+        lightboxImg.src = imgSrc;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox when clicking the close button
+    document.querySelector('#projectLightbox .pixel-close-lightbox').addEventListener('click', function () {
+        document.getElementById('projectLightbox').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close lightbox when clicking outside the image
+    document.getElementById('projectLightbox').addEventListener('click', function (e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close with ESC key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            const lightbox = document.getElementById('projectLightbox');
+            if (lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+
+    // Boat movement script
+    document.addEventListener('DOMContentLoaded', function () {
+        const boat = document.getElementById('boat');
+        const boatSection = document.querySelector('.boat-section');
+
+        // Check if boat element exists
+        if (!boat) return;
+
+        // Initial position
+        let mouseX = window.innerWidth / 2;
+        let boatX = 0;
+        let easing = 0.05;
+
+        // Update boat position based on mouse movement
+        function updateBoatPosition(e) {
+            mouseX = e.clientX;
+        }
+
+        // Smooth animation loop
+        function animate() {
+            // Get boat's current position
+            const rect = boat.getBoundingClientRect();
+            const boatCenter = rect.left + rect.width / 2;
+
+            // Calculate distance to move
+            const distanceX = mouseX - boatCenter;
+            boatX += distanceX * easing;
+
+            // Apply movement with boundaries
+            const maxX = window.innerWidth - rect.width;
+            boatX = Math.max(0, Math.min(boatX, maxX));
+
+            // Apply the new position
+            boat.style.left = `${boatX}px`;
+
+            // Tilt the boat based on movement direction
+            const tilt = (distanceX * 0.1);
+            boat.style.transform = `translateX(-50%) rotate(${tilt}deg)`;
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        animate();
+
+        // Add mousemove event listener
+        window.addEventListener('mousemove', updateBoatPosition);
+
+        // Handle window resize
+        window.addEventListener('resize', function () {
+            const rect = boat.getBoundingClientRect();
+            if (rect.right > window.innerWidth) {
+                boatX = window.innerWidth - rect.width;
+            }
+        });
+    });
+</script>
+
+<!-- Contact Me Section -->
+<section id="contact" class="pixel-contact-section section-animate" style="background-color: #f8fafc; padding: 4rem 1rem; position: relative; overflow: hidden;">
+    <div class="pixel-container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+        <h2 class="pixel-section-title" style="font-family: 'Press Start 2P', cursive; text-align: center; margin-bottom: 2rem; color: #1e293b; font-size: 2rem; text-shadow: 3px 3px 0 #cbd5e1;">
+            CONTACT ME
+        </h2>
+
+        <div class="pixel-contact-content" style="display: flex; flex-direction: column; align-items: center;">
+            <p class="pixel-contact-text" style="font-family: 'Press Start 2P', cursive; color: #475569; text-align: center; margin-bottom: 2rem; font-size: 0.8rem; line-height: 1.6; max-width: 600px;">
+                Let's work together! Feel free to reach out through any of these platforms.
+            </p>
+
+            <div class="pixel-social-links" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <!-- Email -->
+                <a href="mailto:alifrimu1234567l@gmail.com" class="pixel-social-link" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1e293b; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="pixel-social-icon" style="width: 60px; height: 60px; background-color: white; border: 3px solid #1e293b; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; box-shadow: 4px 4px 0 #1e293b; transition: all 0.2s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ea4335;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <span style="font-family: 'Press Start 2P', cursive; font-size: 0.5rem; color: #475569;">EMAIL</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/alif_rimu/" target="_blank" class="pixel-social-link" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1e293b; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="pixel-social-icon" style="width: 60px; height: 60px; background-color: white; border: 3px solid #1e293b; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; box-shadow: 4px 4px 0 #1e293b; transition: all 0.2s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e1306c;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <span style="font-family: 'Press Start 2P', cursive; font-size: 0.5rem; color: #475569;">INSTAGRAM</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/alif-rimu-898284277/" target="_blank" class="pixel-social-link" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1e293b; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="pixel-social-icon" style="width: 60px; height: 60px; background-color: white; border: 3px solid #1e293b; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; box-shadow: 4px 4px 0 #1e293b; transition: all 0.2s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0a66c2;">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <span style="font-family: 'Press Start 2P', cursive; font-size: 0.5rem; color: #475569;">LINKEDIN</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Ashandrea" target="_blank" class="pixel-social-link" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #1e293b; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="pixel-social-icon" style="width: 60px; height: 60px; background-color: white; border: 3px solid #1e293b; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; box-shadow: 4px 4px 0 #1e293b; transition: all 0.2s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #333;">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </div>
+                    <span style="font-family: 'Press Start 2P', cursive; font-size: 0.5rem; color: #475569;">GITHUB</span>
+                </a>
+            </div>
+
+            <div class="pixel-contact-cta" style="margin-top: 3rem; text-align: center;">
+                <a href="https://wa.me/6281319477786?text=Halo%20Alif,%20saya%20ingin%20berbicara%20tentang%20" class="pixel-contact-btn" style="background-color: #1e293b; color: white; font-family: 'Press Start 2P', cursive; font-size: 0.7rem; padding: 0.8rem 1.5rem; border: none; cursor: pointer; text-decoration: none; display: inline-block; border: 3px solid #1e293b; box-shadow: 4px 4px 0 #94a3b8; transition: all 0.2s ease;" onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='6px 6px 0 #94a3b8'" onmouseout="this.style.transform='translate(0, 0)'; this.style.boxShadow='4px 4px 0 #94a3b8'" target="_blank">
+                    SEND ME A MESSAGE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pixel decoration -->
+    <div style="position: absolute; bottom: 20px; right: 20px; opacity: 0.1;">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="20" height="20" fill="#1e293b"/>
+            <rect x="35" y="10" width="20" height="20" fill="#1e293b"/>
+            <rect x="60" y="10" width="20" height="20" fill="#1e293b"/>
+            <rect x="10" y="35" width="20" height="20" fill="#1e293b"/>
+            <rect x="35" y="35" width="20" height="20" fill="#1e293b"/>
+            <rect x="60" y="35" width="20" height="20" fill="#1e293b"/>
+            <rect x="10" y="60" width="20" height="20" fill="#1e293b"/>
+            <rect x="35" y="60" width="20" height="20" fill="#1e293b"/>
+            <rect x="60" y="60" width="20" height="20" fill="#1e293b"/>
+        </svg>
+    </div>
+</section>
+
+<script>
+    // Add hover effect to social icons
+    document.querySelectorAll('.pixel-social-link').forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.querySelector('.pixel-social-icon').style.transform = 'scale(1.1)';
+            this.querySelector('.pixel-social-icon').style.boxShadow = '6px 6px 0 #1e293b';
+        });
+
+        link.addEventListener('mouseleave', function() {
+            this.querySelector('.pixel-social-icon').style.transform = 'scale(1)';
+            this.querySelector('.pixel-social-icon').style.boxShadow = '4px 4px 0 #1e293b';
+        });
+    });
+</script>
+
+
+<!-- Footer -->
+<footer class="pixel-footer"
+    style="background-color: #1e293b; padding: 2rem 1rem; text-align: center; position: relative; z-index: 10;">
+    <div class="pixel-container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="pixel-footer-content"
+            style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="pixel-footer-logo"
+                style="font-family: 'Press Start 2P', cursive; color: white; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                ALIF RIMU
+            </div>
+            <div class="pixel-footer-links"
+                style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                <a href="#" class="pixel-footer-link"
+                    style="color: #94a3b8; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.5rem; transition: color 0.2s ease;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                    HOME
+                </a>
+                <a href="#about" class="pixel-footer-link"
+                    style="color: #94a3b8; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.5rem; transition: color 0.2s ease;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                    ABOUT
+                </a>
+                <a href="#skills" class="pixel-footer-link"
+                    style="color: #94a3b8; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.5rem; transition: color 0.2s ease;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                    SKILLS
+                </a>
+                <a href="#projects" class="pixel-footer-link"
+                    style="color: #94a3b8; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.5rem; transition: color 0.2s ease;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                    PROJECTS
+                </a>
+                <a href="#contact" class="pixel-footer-link"
+                    style="color: #94a3b8; text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.5rem; transition: color 0.2s ease;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">
+                    CONTACT
+                </a>
+            </div>
+            <div class="pixel-copyright"
+                style="color: #64748b; font-family: 'Press Start 2P', cursive; font-size: 0.5rem;">
+                © {{ date('Y Alif Rimu. All rights reserved.') }}
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

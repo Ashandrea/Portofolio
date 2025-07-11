@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <style>
+        /* Pixel art cursor - Default (purple) */
+        html {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%234c1d95'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23a78bfa'/%3E%3C/svg%3E"), auto;
+        }
+
+        /* Pointer cursor for clickable elements (pink) */
+        a, button, .pixel-nav-item, [onclick], [role="button"], [tabindex="0"],
+        .pixel-btn, .pixel-project-card, .pixel-project-card-small, .pixel-certificate-card {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%23f472b6'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23f9a8d4'/%3E%3C/svg%3E"), pointer;
+        }
+
+        /* Project Cards Styling */
+        .pixel-main-project {
+            margin-bottom: 3rem;
+        }
+
+        .pixel-project-card {
+            background: white;
+            border: 3px solid #1e293b;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 6px 6px 0 #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: row;
+            min-height: 250px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-project-card {
+                flex-direction: column;
+            }
+        }
+
+        .pixel-project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0 #1e293b;
+        }
+
+        .pixel-project-card-small {
+            background: white;
+            border: 3px solid #1e293b;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 6px 6px 0 #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pixel-other-projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin: 3rem 0;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .pixel-other-projects {
+                grid-template-columns: 1fr;
+                max-width: 800px;
+                gap: 3rem;
+            }
+        }
+
+        /* Mockup Section Styles */
+        .pixel-section {
+            margin: 3rem 0;
+            padding: 1.5rem 0;
+        }
+
+        .pixel-section-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .pixel-section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pixel-section-subtitle {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+        }
+
+        .pixel-section-subtitle.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pixel-mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .pixel-mockup-card {
+            background: white;
+            border: 2px solid #1e293b;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 4px 4px 0 #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .pixel-mockup-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pixel-mockup-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #1e293b;
+        }
+
+        .pixel-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #1e293b;
+        }
+
+        .pixel-btn:hover span:last-child {
+            left: 0;
+        }
+
+        .pixel-mockup-browser {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            background: #f1f5f9;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .pixel-mockup-browser .pixel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .pixel-mockup-url {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.4rem;
+            color: #64748b;
+            margin-left: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .pixel-mockup-preview {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #f8fafc;
+        }
+
+        .pixel-mockup-info {
+            padding: 0.8rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .pixel-mockup-info h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: #1e293b;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .pixel-mockup-info p {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.5rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .pixel-project-card-small:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 #1e293b;
+        }
+
+        /* Back Button Hover Effect */
+        .pixel-back-btn span:hover {
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0 #1e293b;
+            background: #4338ca;
+        }
+
+        .pixel-project-image,
+        .pixel-project-image-small {
+            position: relative;
+            width: 50%;
+            min-height: 250px;
+            overflow: hidden;
+            background: #f1f5f9;
+            flex-shrink: 0;
+        }
+
+        .pixel-project-image img,
+        .pixel-project-image-small img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-project-image,
+            .pixel-project-image-small {
+                width: 100%;
+                height: 200px;
+                min-height: auto;
+            }
+        }
+
+        .pixel-console-ui,
+        .pixel-project-browser {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 0.5rem;
+            display: flex;
+            background: #f1f5f9;
+            z-index: 1;
+        }
+
+        .pixel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .pixel-dot.red { background-color: #ef4444; }
+        .pixel-dot.yellow { background-color: #f59e0b; }
+        .pixel-dot.green { background-color: #10b981; }
+
+        .pixel-project-info,
+        .pixel-project-info-small {
+            padding: 0.7rem;
+        }
+
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            color: #1e293b;
+        }
+
+        .pixel-desc {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #475569;
+        }
+
+        .pixel-text-sm {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.875rem;
+            color: #1e293b;
+        }
+
+        .pixel-desc-sm {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.65rem;
+            line-height: 1.5;
+            color: #64748b;
+        }
+
+        .pixel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Lightbox Styles */
+        .pixel-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pixel-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .pixel-lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .pixel-lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 4px solid #1e293b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: white;
+        }
+
+
+        :root {
+            --pixel-pink: #ff6b9e;
+            --pixel-blue: #3b82f6;
+            --pixel-purple: #8b5cf6;
+            --pixel-yellow: #fbbf24;
+            --pixel-green: #10b981;
+            --pixel-dark: #1e293b;
+            --pixel-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f0e6ff;
+            background-image:
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--pixel-dark);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .pixel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .pixel-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .pixel-title {
+            font-size: 2rem;
+            color: var(--pixel-purple);
+            text-shadow: 4px 4px 0 var(--pixel-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        .pixel-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pixel-pink), var(--pixel-blue));
+            border-radius: 2px;
+        }
+
+        .pixel-subtitle {
+            font-size: 0.8rem;
+            color: var(--pixel-dark);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pixel-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Pixel Project Card */
+        .pixel-project-card {
+            background: white;
+            border: 4px solid var(--pixel-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 rgba(30, 41, 59, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .pixel-project-card:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 6px 6px 0 var(--pixel-dark);
+        }
+
+        .pixel-project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(30, 41, 59, 0.05),
+                rgba(30, 41, 59, 0.05) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            pointer-events: none;
+        }
+
+        .pixel-project-image {
+            height: 150px;
+            background-color: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--pixel-dark);
+        }
+
+        .pixel-project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .pixel-project-card:hover .pixel-project-image img {
+            transform: scale(1.1);
+        }
+
+        /* Pixel Game Console UI */
+        .pixel-console-ui {
+            height: 30px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            border-bottom: 4px solid var(--pixel-dark);
+        }
+
+        .pixel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid var(--pixel-dark);
+        }
+
+        .pixel-dot.red { background-color: #ef4444; }
+        .pixel-dot.yellow { background-color: #f59e0b; }
+        .pixel-dot.green { background-color: #10b981; }
+
+        .pixel-project-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .pixel-project-info {
+                padding: 1.25rem;
+            }
+        }
+
+        .pixel-project-title {
+            font-size: 0.7rem;
+            margin: 0.3rem 0;
+            color: #1e293b;
+            font-family: 'Press Start 2P', cursive;
+            line-height: 1.3;
+        }
+
+        .pixel-project-desc {
+            font-size: 0.5rem;
+            color: #64748b;
+            margin: 0.3rem 0 0.5rem 0;
+            line-height: 1.3;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .pixel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pixel-tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.4rem;
+            font-family: 'Press Start 2P', cursive;
+            display: inline-block;
+            margin-right: 3px;
+            margin-bottom: 3px;
+        }
+
+        /* Floating Pixel Characters */
+        .pixel-characters {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            background-color: var(--pixel-pink);
+            border: 4px solid var(--pixel-dark);
+            position: relative;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pixel-character::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border: 2px solid var(--pixel-dark);
+        }
+
+        .pixel-character::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            width: 20px;
+            height: 10px;
+            background-color: var(--pixel-dark);
+        }
+
+        .pixel-character:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: var(--pixel-yellow);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Pixel Button */
+        .pixel-btn {
+            display: inline-block;
+            background-color: var(--pixel-pink);
+            color: white;
+            padding: 10px 20px;
+            border: 4px solid var(--pixel-dark);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            text-decoration: none;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--pixel-dark);
+        }
+
+        .pixel-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--pixel-dark);
+            background-color: #ff5294;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pixel-projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pixel-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pixel-container">
+        <div style="margin-bottom: 2rem; text-align: left;">
+            <a href="index.html" class="pixel-btn" style="background-color: #f472b6; color: white; padding: 0.8rem 1.5rem; border: 3px solid #1e293b; box-shadow: 4px 4px 0 #1e293b; font-family: 'Press Start 2P', cursive; font-size: 0.7rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: all 0.2s ease; line-height: 1.2; position: relative; overflow: hidden; z-index: 1;">
+                <span>←</span> BACK TO HOME
+                <span style="position: absolute; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.2); top: 0; left: -100%; transition: all 0.3s ease; z-index: -1;"></span>
+            </a>
+        </div>
+        <header class="pixel-header">
+            <h1 class="pixel-title">MY PROJECTS</h1>
+            <br>
+            <br>
+            <p class="pixel-subtitle">A collection of my digital creations in adorable pixel style</p>
+        </header>
+
+        <!-- Projects Grid -->
+        <div class="pixel-other-projects">
+            <!-- E-Commerce Project -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                    <img src="img/Thomas.png" alt="E-Commerce Project"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/Thomas.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">E-COMMERCE</h3>
+                    <p class="pixel-project-desc">A personal portfolio website built with Laravel and Tailwind CSS. Features responsive design and smooth animations.</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">PHP</span>
+                        <span class="pixel-tag">LARAVEL</span>
+                        <span class="pixel-tag">TAILWIND</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Games Project -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                    <img src="img/MiniGame.png" alt="Mini Game Project"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/MiniGame.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">MINI GAMES</h3>
+                    <p class="pixel-project-desc">Games to sharpen children's focus and reflexes with fun and interactive challenges.</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">PYTHON</span>
+                        <span class="pixel-tag">GOOGLE COLAB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Cream Poster -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                    <img src="img/posterSweetcream.png" alt="Sweet Cream Poster"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/posterSweetcream.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">SWEET CREAM</h3>
+                    <p class="pixel-project-desc">A vibrant poster design featuring refreshing drinks and energetic colors.</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">FIGMA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Poster Views -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                    <img src="img/posterviews.png" alt="Poster Views"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/posterviews.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">POSTER</h3>
+                    <p class="pixel-project-desc">Unlimited views</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">FIGMA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                <img src="img/Datavisualization.png" alt="Data Visualization"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/Datavisualization.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">DATA VISUALIZATION</h3>
+                    <p class="pixel-project-desc">Data visualization project (Bootcamp)</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">Excel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="pixel-project-card">
+                <div class="pixel-console-ui">
+                    <div class="pixel-dot red"></div>
+                    <div class="pixel-dot yellow"></div>
+                    <div class="pixel-dot green"></div>
+                </div>
+                <div class="pixel-project-image">
+                <img src="img/UIUX1.png" alt="UX/UI Design"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; cursor: pointer;"
+                         onclick="openProjectLightbox('img/UIUX1.png')">
+                </div>
+                <div class="pixel-project-info">
+                    <h3 class="pixel-project-title">UX/UI DESIGN</h3>
+                    <p class="pixel-project-desc">Home Page Design, E-Commerrce</p>
+                    <div class="pixel-tags">
+                        <span class="pixel-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Mockup Section -->
+        <div class="pixel-section">
+            <h2 class="pixel-section-title">MOCKUPS</h2>
+            <br>
+            <p class="pixel-section-subtitle">Pixel-perfect designs and wireframes</p>
+
+            <div class="pixel-mockup-grid">
+                <!-- Mockup 1 -->
+                <div class="pixel-mockup-card">
+                    <div class="pixel-mockup-browser">
+                        <div class="pixel-dot red"></div>
+                        <div class="pixel-dot yellow"></div>
+                        <div class="pixel-dot green"></div>
+                        <span class="pixel-mockup-url">mockup.design</span>
+                    </div>
+                    <div class="pixel-mockup-preview" style="background-color: #f0f9ff;">
+                        <img src="img/MockupUIUXB.png" alt="UI Mockup 1"
+                             style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"
+                             onclick="openProjectLightbox('img/MockupUIUXB.png')">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Pixel Characters -->
+    <div class="pixel-characters">
+        <div class="pixel-character" title="Click me!"></div>
+    </div>
+
+    <!-- Project Lightbox Container -->
+    <div id="projectLightbox" class="pixel-lightbox">
+        <span class="pixel-close-lightbox">&times;</span>
+        <div class="pixel-lightbox-content">
+            <img id="projectLightboxImg" src="" alt="Project Image" class="pixel-lightbox-img">
+        </div>
+    </div>
+
+    <script>
+        // Scroll animation for mockup section
+        document.addEventListener('DOMContentLoaded', function() {
+            const mockupSection = document.querySelector('.pixel-section');
+            const mockupTitle = document.querySelector('.pixel-section-title');
+            const mockupSubtitle = document.querySelector('.pixel-section-subtitle');
+            const mockupCards = document.querySelectorAll('.pixel-mockup-card');
+            let animationTriggered = false;
+
+            function checkIfInView() {
+                if (animationTriggered) return;
+
+                const sectionTop = mockupSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (sectionTop < windowHeight * 0.8) {
+                    animationTriggered = true;
+
+                    // Animate title and subtitle
+                    mockupTitle.classList.add('visible');
+                    mockupSubtitle.classList.add('visible');
+
+                    // Animate cards with delay
+                    mockupCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 150); // Staggered animation
+                    });
+                }
+            }
+
+            // Initial check
+            checkIfInView();
+
+            // Check on scroll
+            window.addEventListener('scroll', checkIfInView);
+        });
+
+        // Project Lightbox functionality
+        function openProjectLightbox(imgSrc) {
+            const lightbox = document.getElementById('projectLightbox');
+            const lightboxImg = document.getElementById('projectLightboxImg');
+
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox when clicking the close button or outside the image
+        const lightbox = document.getElementById('projectLightbox');
+        const closeLightbox = document.querySelector('.pixel-close-lightbox');
+
+        closeLightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Make pixel character interactive
+        const pixelCharacter = document.querySelector('.pixel-character');
+
+        pixelCharacter.addEventListener('click', function() {
+            // Create a burst of pixel hearts
+            for (let i = 0; i < 10; i++) {
+                createHeart();
+            }
+
+            // Make character jump
+            this.style.animation = 'none';
+            this.offsetHeight; // Trigger reflow
+            this.style.animation = 'float 3s ease-in-out infinite';
+
+            // Change color temporarily
+            this.style.backgroundColor = '#fbbf24';
+            setTimeout(() => {
+                this.style.backgroundColor = '#ff6b9e';
+            }, 1000);
+        });
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.style.position = 'fixed';
+            heart.style.width = '20px';
+            heart.style.height = '20px';
+            heart.style.backgroundColor = '#ff6b9e';
+            heart.style.border = '2px solid #1e293b';
+            heart.style.borderRadius = '0 0 5px 0';
+            heart.style.transform = 'rotate(45deg)';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = window.innerHeight + 'px';
+            heart.style.zIndex = '100';
+            heart.style.pointerEvents = 'none';
+
+            // Create pseudo elements for heart shape
+            heart.style.setProperty('--heart-size', '20px');
+            heart.style.setProperty('--heart-color', '#ff6b9e');
+            heart.style.setProperty('--border-color', '#1e293b');
+
+            document.body.appendChild(heart);
+
+            // Animate heart
+            const animation = heart.animate([
+                {
+                    top: window.innerHeight + 'px',
+                    opacity: 1
+                },
+                {
+                    top: Math.random() * window.innerHeight / 2 + 'px',
+                    opacity: 0
+                }
+            ], {
+                duration: 1000 + Math.random() * 2000,
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+
+            animation.onfinish = () => {
+                heart.remove();
+            };
+        }
+
+        // Create 10 follower pixels
+        const pixels = [];
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Create 10 follower pixels
+        for (let i = 0; i < 10; i++) {
+            const pixel = document.createElement('div');
+            pixel.className = 'pixel-follower';
+            pixel.style.backgroundColor = getRandomColor();
+            pixel.style.width = '8px';
+            pixel.style.height = '8px';
+            pixel.style.position = 'fixed';
+            pixel.style.borderRadius = '2px';
+            pixel.style.pointerEvents = 'none';
+            pixel.style.zIndex = '1000';
+            pixel.style.transition = `all 0.${i}s ease`;
+            pixel.style.opacity = '1';
+            document.body.appendChild(pixel);
+            pixels.push({
+                element: pixel,
+                x: 0,
+                y: 0
+            });
+        }
+
+        // Track mouse movement
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Update pixels position with delay based on index
+            pixels.forEach((pixel, index) => {
+                const delay = index * 0.03; // Stagger the movement
+                setTimeout(() => {
+                    pixel.x = mouseX - 4; // Center the pixel
+                    pixel.y = mouseY - 4; // Center the pixel
+                    pixel.element.style.left = `${pixel.x}px`;
+                    pixel.element.style.top = `${pixel.y}px`;
+                }, delay * 1000);
+            });
+        });
+
+        // Show pixels when mouse enters the document
+        document.addEventListener('mouseenter', () => {
+            pixels.forEach(pixel => {
+                pixel.element.style.opacity = '1';
+            });
+        });
+
+        // Make project cards interactive
+        const projectCards = document.querySelectorAll('.pixel-project-card');
+
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const dots = card.querySelectorAll('.pixel-dot');
+                dots.forEach((dot, index) => {
+                    setTimeout(() => {
+                        dot.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            dot.style.transform = 'scale(1)';
+                        }, 200);
+                    }, index * 100);
+                });
+            });
+
+            card.addEventListener('click', () => {
+                card.style.boxShadow = '0 0 0 var(--pixel-dark)';
+                card.style.transform = 'translate(0, 0)';
+                setTimeout(() => {
+                    card.style.boxShadow = '8px 8px 0 var(--pixel-dark)';
+                }, 200);
+
+                // Create pixel explosion effect
+                for (let i = 0; i < 20; i++) {
+                    createPixel(card);
+                }
+            });
+        });
+
+        function createPixel(card) {
+            const rect = card.getBoundingClientRect();
+            const pixel = document.createElement('div');
+            pixel.style.position = 'fixed';
+            pixel.style.width = '10px';
+            pixel.style.height = '10px';
+            pixel.style.backgroundColor = getRandomColor();
+            pixel.style.border = '1px solid var(--pixel-dark)';
+            pixel.style.left = (rect.left + Math.random() * rect.width) + 'px';
+            pixel.style.top = (rect.top + Math.random() * rect.height) + 'px';
+            pixel.style.zIndex = '100';
+            pixel.style.pointerEvents = 'none';
+
+            document.body.appendChild(pixel);
+
+            // Animate pixel
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 50 + Math.random() * 50;
+
+            const animation = pixel.animate([
+                {
+                    transform: 'translate(0, 0) rotate(0deg)',
+                    opacity: 1
+                },
+                {
+                    transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) rotate(360deg)`,
+                    opacity: 0
+                }
+            ], {
+                duration: 800 + Math.random() * 800,
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+
+            animation.onfinish = () => {
+                pixel.remove();
+            };
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff6b9e', '#3b82f6', '#8b5cf6', '#f59e0b', '#10b981', '#ec4899', '#6366f1', '#f97316', '#22c55e', '#06b6d4'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates - Pixel Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <style>
+        /* Pixel art cursor - Default (purple) */
+        html {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%234c1d95'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23a78bfa'/%3E%3C/svg%3E"), auto;
+        }
+
+        /* Pointer cursor for clickable elements (pink) */
+        a, button, .pixel-nav-item, [onclick], [role="button"], [tabindex="0"],
+        .pixel-btn, .pixel-project-card, .pixel-certificate-card {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect x='0' y='0' width='16' height='16' fill='%23f472b6'/%3E%3Crect x='2' y='2' width='12' height='12' fill='%23f9a8d4'/%3E%3C/svg%3E"), pointer;
+        }
+
+        :root {
+            --pixel-bg: #f3e8ff;
+            --pixel-text: #4c1d95;
+            --pixel-accent: #a78bfa;
+            --pixel-accent-light: #c4b5fd;
+            --pixel-shadow: #166534; /* Dark green shadow */
+            --pixel-border: #14532d; /* Darker green border */
+            --pixel-card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f0fdf4; /* Light green base */
+            background-image: 
+                linear-gradient(45deg, #dcfce7 25%, transparent 25%),
+                linear-gradient(-45deg, #dcfce7 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #dcfce7 75%),
+                linear-gradient(-45deg, transparent 75%, #dcfce7 75%);
+            background-size: 40px 40px;
+            background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+            color: var(--pixel-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .pixel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pixel-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pixel-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0 var(--pixel-shadow);
+            position: relative;
+            display: inline-block;
+        }
+
+        .pixel-subtitle {
+            font-size: 0.9rem;
+            color: var(--pixel-text);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .pixel-certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pixel-certificate-card {
+            background: var(--pixel-card-bg);
+            border: 4px solid var(--pixel-border);
+            padding: 0.5rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 8px 8px 0 var(--pixel-shadow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .pixel-certificate-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .pixel-certificate-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 13px 13px 0 var(--pixel-shadow);
+        }
+
+        /* Button Styles */
+        .pixel-btn {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .pixel-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 #1e293b;
+        }
+
+        .pixel-btn:hover span:last-child {
+            left: 0;
+        }
+
+        .pixel-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0 #1e293b;
+        }
+        }
+
+        .pixel-console-ui {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .pixel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid var(--pixel-border);
+        }
+
+        .pixel-dot.red { background-color: #ff5f56; }
+        .pixel-dot.yellow { background-color: #ffbd2e; }
+        .pixel-dot.green { background-color: #27c93f; }
+
+        .pixel-certificate-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f5f9;
+            margin-bottom: 1rem;
+            border: 3px solid var(--pixel-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pixel-certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pixel-certificate-title {
+            font-size: 1rem;
+            margin: 1rem 0 0.5rem;
+            color: var(--pixel-text);
+            line-height: 1.4;
+        }
+
+        .pixel-certificate-issuer {
+            font-size: 0.7rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .pixel-certificate-date {
+            display: inline-block;
+            background: var(--pixel-accent);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .pixel-btn {
+            display: inline-block;
+            background: var(--pixel-accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            margin-top: 1rem;
+            box-shadow: 4px 4px 0 var(--pixel-shadow);
+        }
+
+        .pixel-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--pixel-shadow);
+        }
+
+        .pixel-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--pixel-shadow);
+        }
+
+        .pixel-back-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--pixel-accent);
+            color: white;
+            text-decoration: none;
+            border: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 4px 4px 0 var(--pixel-shadow);
+        }
+
+        .pixel-back-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--pixel-shadow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pixel-certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pixel-title {
+                font-size: 2rem;
+            }
+
+            .pixel-subtitle {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Lightbox Styles */
+        .pixel-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pixel-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .pixel-lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            padding: 10px;
+            border: 4px solid var(--pixel-border);
+            box-shadow: 0 0 0 10px white, 0 0 0 14px var(--pixel-border);
+        }
+
+        .pixel-lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+        }
+
+        .pixel-close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .pixel-close-lightbox:hover {
+            color: var(--pixel-accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="pixel-container">
+        <div style="margin-bottom: 2rem; text-align: left;">
+            <a href="index.html" class="pixel-btn" style="background-color: #f472b6; color: white; padding: 0.8rem 1.5rem; border: 3px solid #1e293b; box-shadow: 4px 4px 0 #1e293b; font-family: 'Press Start 2P', cursive; font-size: 0.7rem; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: all 0.2s ease; line-height: 1.2; position: relative; overflow: hidden; z-index: 1;">
+                <span>←</span> BACK TO HOME
+                <span style="position: absolute; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.2); top: 0; left: -100%; transition: all 0.3s ease; z-index: -1;"></span>
+            </a>
+        </div>
+        <div class="pixel-certificates-grid">
+            <div class="pixel-certificate-card">
+                <img src="img/img Certificates/MySkillDataVisualizationExcel.png" alt="Data Visualization with Excel">
+            </div>
+            <div class="pixel-certificate-card">
+                <img src="img/img Certificates/CodeGenerationandOptimizationIBMGranite.png" alt="Code Generation & Optimization">
+            </div>
+            <div class="pixel-certificate-card">
+                <img src="img/img Certificates/Blockkchain.png" alt="Blockchain Technology">
+            </div>
+            <div class="pixel-certificate-card">
+                <img src="img/img Certificates/Pengembang Aplikasi.jpeg" alt="Application Development">
+            </div>
+            <div class="pixel-certificate-card">
+                <img src="img/img Certificates/Desain Grafis.jpeg" alt="Graphic Design">
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Lightbox Container -->
+    <div id="certificateLightbox" class="pixel-lightbox">
+        <span class="pixel-close-lightbox">&times;</span>
+        <div class="pixel-lightbox-content">
+            <img id="certificateLightboxImg" src="" alt="Certificate Image" class="pixel-lightbox-img">
+        </div>
+    </div>
+
+    <script>
+        // Certificate Lightbox functionality
+        function openCertificateLightbox(imgSrc) {
+            const lightbox = document.getElementById('certificateLightbox');
+            const lightboxImg = document.getElementById('certificateLightboxImg');
+
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox when clicking the close button or outside the image
+        const lightbox = document.getElementById('certificateLightbox');
+        const closeLightbox = document.querySelector('.pixel-close-lightbox');
+
+        closeLightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to certificate images
+            const certificateImages = document.querySelectorAll('.pixel-certificate-card img');
+            certificateImages.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    openCertificateLightbox(this.src);
+                });
+            });
+
+            // Add hover effect to certificate cards
+            const cards = document.querySelectorAll('.pixel-certificate-card');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const dots = card.querySelectorAll('.pixel-dot');
+                    dots.forEach((dot, index) => {
+                        setTimeout(() => {
+                            dot.style.transform = 'scale(1.2)';
+                            setTimeout(() => {
+                                dot.style.transform = 'scale(1)';
+                            }, 200);
+                        }, index * 100);
+                    });
+                });
+            });
+
+            // Add click effect to buttons
+            const buttons = document.querySelectorAll('.pixel-btn');
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', () => {
+                    button.style.transform = 'translate(2px, 2px)';
+                    button.style.boxShadow = '2px 2px 0 var(--pixel-shadow)';
+                });
+
+                button.addEventListener('mouseup', () => {
+                    button.style.transform = 'translate(-2px, -2px)';
+                    button.style.boxShadow = '6px 6px 0 var(--pixel-shadow)';
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translate(0, 0)';
+                    button.style.boxShadow = '4px 4px 0 var(--pixel-shadow)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
